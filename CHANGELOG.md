@@ -8,6 +8,22 @@ data-driven engine is defined in [`docs/versioning.md`](docs/versioning.md).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-02
+
+### Changed
+
+- The code is now named after the engine: the project is `src/Gasci/Gasci.csproj`, the tests
+  `tests/Gasci.Tests`, the solution `Gasci.sln`, the executable `Gasci` and every namespace `Gasci.*`
+  (was `Relato`). Content files are not affected.
+- The player files folder is named after the game's `title` in `game.json` instead of being fixed, so
+  every game made with Gasci keeps its own saves, settings and log. The demo's title is still `Relato`,
+  so its existing player files keep working.
+- The default `title` of `game.json` is now `"Gasci"`.
+
+### Added
+
+- `Paths.ToFolderName` turns a game title into a valid folder name on every platform, with unit tests.
+
 ## [1.0.0] - 2026-10-02
 
 First public version of the engine, extracted from the game *Relato* (which ships with it as the demo).
@@ -49,5 +65,6 @@ First public version of the engine, extracted from the game *Relato* (which ship
 - **Documentation**: README, getting started guide, tutorial, architecture overview and a full content
   reference in `docs/`.
 
-[Unreleased]: https://github.com/Grojman/Gasci/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Grojman/Gasci/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/Grojman/Gasci/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Grojman/Gasci/releases/tag/v1.0.0

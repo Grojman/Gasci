@@ -9,7 +9,7 @@ All the steps were checked with `--validate`. Run it after each step: it tells y
 missing.
 
 ```bash
-dotnet run --project src/Relato -- --validate
+dotnet run --project src/Gasci -- --validate
 ```
 
 ## 1. Variables
@@ -222,10 +222,10 @@ the same key closes it.
 ## 8. Check and play
 
 ```bash
-dotnet run --project src/Relato -- --validate
+dotnet run --project src/Gasci -- --validate
 #   Text metrics regenerated: assets/data/generated/text_metrics.csv
 #   Content OK (146 texts, 24 variables, 9 scenes, 4 maps, 8 conversations, 9 events, 13 input actions)
-dotnet run --project src/Relato
+dotnet run --project src/Gasci
 ```
 
 Start a new game, walk to the top left of your room, meet the cat, and press J.

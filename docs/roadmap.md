@@ -2,10 +2,6 @@
 
 ## Planned
 
-- **Rename the code to Gasci.** The C# project, namespaces, test project and user data folder are still
-  called `Relato`. They will become `Gasci`, and the user data folder will be named after the game
-  (`game.json → title` or a new setting) instead of being fixed. This changes the location of player
-  files, so it will be released as a MAJOR version (see [versioning](versioning.md)).
 - **Separate engine and game.** Today the engine and the demo share one project and the assets are
   copied from the repository root. The goal is an engine library plus a thin launcher that can point at
   any game folder.

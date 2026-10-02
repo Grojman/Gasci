@@ -10,8 +10,8 @@
 ## Running
 
 ```bash
-dotnet run --project src/Relato                 # play
-dotnet run --project src/Relato -- --validate   # check every asset without opening a window
+dotnet run --project src/Gasci                 # play
+dotnet run --project src/Gasci -- --validate   # check every asset without opening a window
 dotnet test                                     # unit tests of the engine logic
 ```
 
@@ -45,7 +45,7 @@ once, and also checks things the game only notices when it reaches them.
 
 ## Testing
 
-`tests/Relato.Tests` holds xUnit tests for the pure-logic parts of the engine:
+`tests/Gasci.Tests` holds xUnit tests for the pure-logic parts of the engine:
 
 | File | Covers |
 |---|---|
@@ -54,6 +54,7 @@ once, and also checks things the game only notices when it reaches them.
 | `VariableTests.cs` | Templates, rules, clamping, rejected writes, loading values. |
 | `InputTests.cs` | Defaults, overrides, conflicts, swapping, reset. |
 | `EventTests.cs` | Trigger indexing, conditions, `once`, immediate events and dependencies. |
+| `PathsTests.cs` | Game titles turned into player folder names. |
 
 `TestContent.cs` writes small variable templates to a temporary folder, so the tests do not depend on the
 demo's assets.
@@ -69,16 +70,24 @@ playing.
 ## Publishing a build
 
 ```bash
-dotnet publish src/Relato -c Release -r linux-x64 --self-contained   # or win-x64, osx-arm64...
+dotnet publish src/Gasci -c Release -r linux-x64 --self-contained   # or win-x64, osx-arm64...
 ```
 
-The output folder (`src/Relato/bin/Release/net9.0/<rid>/publish/`) contains the executable and the
+The output folder (`src/Gasci/bin/Release/net9.0/<rid>/publish/`) contains the executable and the
 `assets/` folder. Ship the whole folder. Run `--validate` before publishing.
 
 ## Player files and the log
 
-Stored in `~/.local/share/Relato` (Linux), `%LOCALAPPDATA%\Relato` (Windows) or
-`~/Library/Application Support/Relato` (macOS):
+Each game keeps its files in a folder named after its `title` in [`game.json`](reference/game-config.md),
+so several games made with Gasci never share saves or settings. For the demo (title `Relato`):
+`~/.local/share/Relato` (Linux), `%LOCALAPPDATA%\Relato` (Windows) or
+`~/Library/Application Support/Relato` (macOS). Characters that are not valid in folder names
+(`<>:"/\|?*`) become `_`.
+
+> Changing a game's `title` moves its player files to a new folder: players lose their saves and
+> settings. Pick the title before releasing the game.
+
+
 
 | File | Contents |
 |---|---|

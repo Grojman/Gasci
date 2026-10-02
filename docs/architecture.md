@@ -21,7 +21,7 @@ scenes/*.json ─────►│ SceneStack ── only the top scene is enab
 events.json ───────►│ EventEngine ── runs action lists through the shared ActionRunner
 ```
 
-## Code layout (`src/Relato`)
+## Code layout (`src/Gasci`)
 
 | Folder | Contents |
 |---|---|

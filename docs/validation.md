@@ -1,7 +1,7 @@
 # Validation
 
 ```bash
-dotnet run --project src/Relato -- --validate
+dotnet run --project src/Gasci -- --validate
 ```
 
 `--validate` loads every asset without opening a window, resolves every reference between them, lays

@@ -10,7 +10,7 @@ only the engine. A new game is made by writing new assets, not new code.
 The repository also contains **Relato**, a short horror graphic novel with exploration. It is the game
 Gasci was born from and serves as the reference demo for every feature.
 
-> **Version 1.0.0** — see the [changelog](CHANGELOG.md) and the [versioning policy](docs/versioning.md).
+> **Version 1.1.0** — see the [changelog](CHANGELOG.md) and the [versioning policy](docs/versioning.md).
 
 ---
 
@@ -42,8 +42,8 @@ Requires the [.NET 9 SDK](https://dotnet.microsoft.com/download).
 ```bash
 git clone https://github.com/Grojman/Gasci.git
 cd Gasci
-dotnet run --project src/Relato                 # play the demo
-dotnet run --project src/Relato -- --validate   # check every asset without opening a window
+dotnet run --project src/Gasci                 # play the demo
+dotnet run --project src/Gasci -- --validate   # check every asset without opening a window
 dotnet test                                     # run the unit tests
 ```
 
@@ -116,17 +116,13 @@ Gasci/
 │   ├── images/              ASCII art (.txt)
 │   ├── audio/               Optional .wav files that replace the synthesized sounds
 │   └── fonts/               Optional custom bitmap fonts
-├── src/Relato/              The engine (C#) and the executable
-├── tests/Relato.Tests/      Unit tests (xUnit)
+├── src/Gasci/               The engine (C#) and the executable
+├── tests/Gasci.Tests/       Unit tests (xUnit)
 ├── docs/                    Documentation
 ├── Directory.Build.props    Engine version, shared by every project
 ├── CHANGELOG.md
 └── gdd.md                   Design document of the demo game
 ```
-
-> The C# project, namespace and user data folder are still called `Relato`, the game the engine was
-> extracted from. Renaming them to `Gasci` is planned (see the [roadmap](docs/roadmap.md)); it does not
-> affect content files.
 
 ## The demo: Relato
 
@@ -143,7 +139,7 @@ the engine.
 
 ## Contributing
 
-1. Run `dotnet test` and `dotnet run --project src/Relato -- --validate` before every commit; both must pass.
+1. Run `dotnet test` and `dotnet run --project src/Gasci -- --validate` before every commit; both must pass.
 2. Content changes go with their documentation: a new block property, action or trigger is not done until
    it is in `docs/reference/`.
 3. Add an entry under `[Unreleased]` in [CHANGELOG.md](CHANGELOG.md) for every user-visible change.

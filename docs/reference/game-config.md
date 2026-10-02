@@ -23,7 +23,7 @@ allowed in every JSON file of the engine.
 
 | Key | Default | Meaning |
 |---|---|---|
-| `title` | `"Relato"` | Window title. |
+| `title` | `"Gasci"` | Window title, and the name of the [player files folder](../getting-started.md#player-files-and-the-log). |
 | `grid.minWidth`, `grid.minHeight` | `100`, `36` | The smallest grid, in cells, the game is designed for. At least 20×10. Windowed mode uses exactly this size. |
 | `grid.fontScales` | `[2, 1]` | Font scales the engine may use (1–4), biggest first. |
 | `font` | `null` | `null` for SadConsole's built-in IBM 8×16 font (CP437 layout), or `{ "file": "x.font", "charmap": "x.charmap.txt" }` in `assets/fonts/`. See [fonts](media.md#fonts). |

@@ -20,6 +20,10 @@ about the C# API second.
 
 Notes:
 
+- **The C# API is not a public contract yet.** No game references the engine as a library (games are
+  content folders), so renaming C# projects, namespaces or types is a MINOR change until the engine is
+  split into a library (see the [roadmap](roadmap.md)). Changes that only affect the demo's player files
+  are also MINOR, since the demo is a test bed for the engine.
 - A new validator **error** for content that used to pass is a MAJOR change, unless that content was
   already broken at runtime (then it is a fix).
 - Changes to the demo game (Relato) in `assets/` alone do not change the engine version. They are listed
@@ -39,7 +43,7 @@ Notes:
 
    ```bash
    git switch main && git pull
-   dotnet build && dotnet test && dotnet run --project src/Relato -- --validate
+   dotnet build && dotnet test && dotnet run --project src/Gasci -- --validate
    ```
 
 2. Pick the new version with the table above.
@@ -63,3 +67,4 @@ Notes:
 | Version | Date | Summary |
 |---|---|---|
 | [1.0.0](https://github.com/Grojman/Gasci/releases/tag/v1.0.0) | 2026-10-02 | First public version. |
+| [1.1.0](https://github.com/Grojman/Gasci/releases/tag/v1.1.0) | 2026-10-02 | Code renamed to Gasci; player files folder named after each game. |
