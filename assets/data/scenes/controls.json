@@ -1,0 +1,31 @@
+{
+  // Key bindings: one row per action, one column per key slot (primary, secondary).
+  "presentation": "modal",
+  "inputs": { "ui.back": [ { "type": "back" } ] },
+  "root": {
+    "type": "stack", "border": true, "padding": [3, 1], "spacing": 1, "background": "background",
+    "children": [
+      { "type": "text", "text": "controls.title", "style": "highlight" },
+      {
+        "type": "menu", "id": "controls_menu", "focus": true,
+        "children": [
+          { "type": "keybind", "action": "map.up" },
+          { "type": "keybind", "action": "map.down" },
+          { "type": "keybind", "action": "map.left" },
+          { "type": "keybind", "action": "map.right" },
+          { "type": "keybind", "action": "map.interact" },
+          { "type": "keybind", "action": "pause" },
+          { "type": "keybind", "action": "ui.up" },
+          { "type": "keybind", "action": "ui.down" },
+          { "type": "keybind", "action": "ui.left" },
+          { "type": "keybind", "action": "ui.right" },
+          { "type": "keybind", "action": "ui.confirm" },
+          { "type": "keybind", "action": "ui.back" },
+          { "type": "button", "label": "controls.reset_all", "actions": [ { "type": "resetAllBindings" } ] },
+          { "type": "button", "label": "settings.back", "actions": [ { "type": "back" } ] }
+        ]
+      },
+      { "type": "text", "text": "controls.hint", "style": "hint" }
+    ]
+  }
+}

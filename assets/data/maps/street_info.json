@@ -1,0 +1,44 @@
+{
+  "titleKey": "map.street",
+  // Interaction texts of this map are shown in this textbox block (scenes/game.json).
+  "textbox": "map_message",
+  "music": "street",
+  "variants": [ { "if": "game.distortion >= 2", "file": "street_distorted" } ],
+  "tiles": [
+    { "char": "#", "glyph": "█", "fg": "#2f2f3a", "solid": true },
+    { "char": "▓", "glyph": "▓", "fg": "#4a2030", "solid": true },
+    { "char": "w", "glyph": "▒", "fg": "#6b6030", "solid": true, "interact": "obj.window_street" },
+    { "char": "x", "glyph": "▒", "fg": "#6b1a1a", "solid": true, "interact": "obj.window_eyes" },
+    { "char": "d", "glyph": "▐", "fg": "#5a3a22", "solid": true, "interact": "obj.locked_door" },
+    { "char": "+", "glyph": "▒", "fg": "#8a5a30" },
+    { "char": ".", "glyph": ".", "fg": "#4a4a4a" },
+    { "char": "-", "glyph": "─", "fg": "#6a6a2a" },
+    { "char": "l", "anim": ["☼", "☼", "☼", "∙"], "animSpeed": 0.25, "fg": "#d8c070", "solid": true, "interact": "obj.lamp" },
+    { "char": "c", "glyph": "▄", "fg": "#5a2020", "solid": true, "interact": "obj.car" },
+    { "char": "u", "glyph": "■", "fg": "#3f5a3f", "solid": true, "interact": "obj.bin" },
+    { "char": "s", "glyph": "╥", "fg": "#9a9a9a", "solid": true, "interact": "obj.sign_park" },
+    { "char": "g", "glyph": "░", "fg": "#707070" }
+  ],
+  "exits": [
+    { "x": 10, "y": 6, "map": "home", "toX": 27, "toY": 12 },
+    { "x": 195, "y": 7, "map": "park", "toX": 2, "toY": 9, "sfx": null },
+    { "x": 195, "y": 8, "map": "park", "toX": 2, "toY": 9, "sfx": null },
+    { "x": 195, "y": 9, "map": "park", "toX": 2, "toY": 9, "sfx": null }
+  ],
+  "npcs": [
+    {
+      "id": "clara", "x": 61, "y": 8, "glyph": "C", "fg": "#c9a0dc", "dialog": "clara_talk",
+      "variants": [
+        { "if": "game.clara_gone", "glyph": "%", "fg": "DarkRed", "dialog": "", "interact": "obj.clara_gone" },
+        { "if": "game.clara_helped", "fg": "#a0dca0", "dialog": "clara_after" }
+      ]
+    },
+    {
+      "id": "shadow", "x": 150, "y": 15, "if": "game.met_shadow",
+      "anim": ["&", "§", "&", "%"], "animSpeed": 0.3, "fg": "#7a3aa0", "dialog": "shadow_again",
+      "variants": [
+        { "if": "game.shadow_defeated", "glyph": "∙", "anim": [], "fg": "#3a3a3a", "dialog": "", "interact": "obj.stain" }
+      ]
+    }
+  ]
+}

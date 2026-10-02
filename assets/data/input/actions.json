@@ -1,0 +1,17 @@
+{
+  // Input actions and their default keys (primary, secondary). Enter is fixed to ui.confirm and cannot be bound.
+  // Actions of the same "context" cannot share a key; "global" conflicts with every context.
+  // Game-specific actions are declared here too; scenes and blocks decide what they do ("inputs").
+  "ui.up":        { "label": "input.up",        "keys": ["Up", "W"],      "context": "ui" },
+  "ui.down":      { "label": "input.down",      "keys": ["Down", "S"],    "context": "ui" },
+  "ui.left":      { "label": "input.left",      "keys": ["Left", "A"],    "context": "ui" },
+  "ui.right":     { "label": "input.right",     "keys": ["Right", "D"],   "context": "ui" },
+  "ui.confirm":   { "label": "input.confirm",   "keys": ["Space", "E"],   "context": "ui" },
+  "ui.back":      { "label": "input.back",      "keys": ["Escape"],       "context": "ui" },
+  "map.up":       { "label": "input.walk_up",    "keys": ["Up", "W"],     "context": "map", "repeat": true },
+  "map.down":     { "label": "input.walk_down",  "keys": ["Down", "S"],   "context": "map", "repeat": true },
+  "map.left":     { "label": "input.walk_left",  "keys": ["Left", "A"],   "context": "map", "repeat": true },
+  "map.right":    { "label": "input.walk_right", "keys": ["Right", "D"],  "context": "map", "repeat": true },
+  "map.interact": { "label": "input.interact",   "keys": ["E", "Space"],  "context": "map" },
+  "pause":        { "label": "input.pause",      "keys": ["Escape"],      "context": "map" }
+}

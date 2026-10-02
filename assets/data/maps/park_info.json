@@ -1,0 +1,21 @@
+{
+  "titleKey": "map.park",
+  // Interaction texts of this map are shown in this textbox block (scenes/game.json).
+  "textbox": "map_message",
+  "music": "park",
+  "tiles": [
+    { "char": "#", "glyph": "┼", "fg": "#4a4a4a", "solid": true },
+    { "char": "\"", "glyph": "\"", "fg": "#1f3a1f" },
+    { "char": ".", "glyph": ".", "fg": "#6a5a40" },
+    { "char": "T", "glyph": "♣", "fg": "#2f5a2f", "solid": true, "interact": "obj.tree" },
+    { "char": "~", "anim": ["~", "≈"], "animSpeed": 0.8, "fg": "#2a4a6a", "solid": true, "interact": "obj.pond" },
+    { "char": "h", "glyph": "▬", "fg": "#8a6a40" },
+    { "char": "g", "glyph": "░", "fg": "#707070" }
+  ],
+  "exits": [
+    { "x": 0, "y": 8, "map": "street", "toX": 193, "toY": 8, "sfx": null },
+    { "x": 0, "y": 9, "map": "street", "toX": 193, "toY": 8, "sfx": null },
+    { "x": 0, "y": 10, "map": "street", "toX": 193, "toY": 8, "sfx": null }
+  ],
+  "npcs": []
+}

@@ -1,0 +1,131 @@
+key,es,en
+lang.es,Español,Español
+lang.en,English,English
+title.continue,Continuar partida,Continue
+title.new,Nueva partida,New game
+title.settings,Ajustes,Settings
+title.exit,Salir del juego,Quit game
+title.subtitle,un relato sobre lo que no se dice,a tale about what goes unsaid
+title.hint,{k:ui.up}{k:ui.down} elegir · Enter aceptar,{k:ui.up}{k:ui.down} choose · Enter accept
+settings.title,AJUSTES,SETTINGS
+settings.music,Música,Music
+settings.sfx,Efectos,Effects
+settings.language,Idioma,Language
+settings.display,Pantalla,Display
+settings.back,Volver,Back
+settings.autosave,Autoguardado,Autosave
+settings.autosave_minutes,Cada (minutos),Every (minutes)
+settings.controls,Controles,Controls
+display.windowed,Ventana,Windowed
+display.fullscreen,Completa,Full screen
+display.borderless,Sin bordes,Borderless
+ui.on,Sí,On
+ui.off,No,Off
+controls.title,CONTROLES,CONTROLS
+controls.hint,{k:ui.left}{k:ui.right} principal/secundaria · Enter cambiar (Enter otra vez cancela) · {k:ui.back} volver,{k:ui.left}{k:ui.right} primary/secondary · Enter change (Enter again cancels) · {k:ui.back} back
+controls.reset_all,Restaurar todos,Restore all
+input.up,Menú: arriba,Menu: up
+input.down,Menú: abajo,Menu: down
+input.left,Menú: izquierda,Menu: left
+input.right,Menú: derecha,Menu: right
+input.confirm,Menú: aceptar,Menu: accept
+input.back,Menú: volver,Menu: back
+input.walk_up,Andar arriba,Walk up
+input.walk_down,Andar abajo,Walk down
+input.walk_left,Andar izquierda,Walk left
+input.walk_right,Andar derecha,Walk right
+input.interact,Interactuar,Interact
+input.pause,Pausa,Pause
+settings.hint,{k:ui.left}{k:ui.right} cambiar · {k:ui.back} volver,{k:ui.left}{k:ui.right} change · {k:ui.back} back
+pause.title,PAUSA,PAUSED
+pause.resume,Continuar,Resume
+pause.save,Guardar partida,Save game
+pause.settings,Ajustes,Settings
+pause.title_screen,Guardar y volver al título,Save and return to title
+pause.quit,Salir del juego,Quit game
+pause.saved,Partida guardada.,Game saved.
+pause.cannot_save,Ahora no puedes guardar.,You can't save right now.
+map.hint,{k:map.up}{k:map.left}{k:map.down}{k:map.right} mover · {k:map.interact} interactuar · {k:pause} menú,{k:map.up}{k:map.left}{k:map.down}{k:map.right} move · {k:map.interact} interact · {k:pause} menu
+dialog.locked,(bloqueado),(locked)
+map.home,Casa,Home
+map.street,La calle,The street
+map.park,El parque,The park
+char.mother,Mamá,Mom
+char.mother_distorted,¿Mamá?,Mom?
+char.clara,Clara,Clara
+char.shadow,La Sombra,The Shadow
+obj.bed,Las sábanas siguen calientes. Y húmedas. No recuerdas haber sudado tanto.,The sheets are still warm. And damp. You don't remember sweating that much.
+obj.mirror,Tu reflejo tarda un segundo de más en imitarte.{p:700} Solo un segundo.,Your reflection takes one second too long to copy you.{p:700} Just one second.
+obj.window,"Fuera, la calle parece más larga que ayer.","Outside, the street looks longer than yesterday."
+obj.photo,Una foto familiar. Alguien ha rascado tu cara hasta dejar solo el papel blanco.,A family photo. Someone scratched your face away until only white paper is left.
+obj.fridge,El zumbido de la nevera suena a respiración.,The hum of the fridge sounds like breathing.
+obj.counter,El cuchillo del pan no está en su sitio.,The bread knife is not where it should be.
+obj.table,Dos tazas. Una lleva días fría.,Two mugs. One has been cold for days.
+obj.clock,"El reloj de pared marca siempre las {c:DarkRed}3:17{c}. Las agujas se mueven, pero la hora no cambia.","The wall clock always reads {c:DarkRed}3:17{c}. The hands move, but the time never changes."
+obj.window_street,Todas las persianas están bajadas. A plena luz del día.,Every blind is down. In broad daylight.
+obj.window_eyes,"Detrás del cristal, algo parpadea al mismo ritmo que tú.","Behind the glass, something blinks in time with you."
+obj.locked_door,"Cerrada. Al otro lado, alguien contiene la respiración.","Locked. On the other side, someone is holding their breath."
+obj.lamp,La farola parpadea al ritmo de tu pulso.,The streetlight flickers to the rhythm of your pulse.
+obj.car,Un coche aparcado. El asiento del conductor conserva la forma de alguien que ya no está.,A parked car. The driver's seat still holds the shape of someone who is gone.
+obj.bin,Algo se mueve dentro del cubo de basura.{p:600} Decides que no.,Something moves inside the bin.{p:600} You decide not to.
+obj.sign_park,"PARQUE MUNICIPAL. Alguien ha tachado ""municipal"" y ha escrito ""final"".","TOWN PARK. Someone crossed out ""town"" and wrote ""last""."
+obj.stain,Solo queda una mancha oscura en el asfalto. Todavía está tibia.,Only a dark stain remains on the asphalt. It is still warm.
+obj.clara_gone,Clara está tendida en el umbral. No se mueve.{p:800} No quieres mirar más de cerca.,Clara is lying on the doorstep. She isn't moving.{p:800} You don't want to look any closer.
+obj.tree,Las ramas se inclinan hacia ti. No hace viento.,The branches lean towards you. There is no wind.
+obj.pond,El agua no refleja nada. Ni siquiera el cielo.,The water reflects nothing. Not even the sky.
+ev.intro.1,Otra mañana.,Another morning.
+ev.intro.2,El techo sigue ahí.{p:600} Tú también.,The ceiling is still there.{p:600} So are you.
+ev.intro.3,Te levantas. Desde la cocina llega olor a café y el ruido de una cucharilla que no deja de dar vueltas.,You get up. From the kitchen comes the smell of coffee and the sound of a spoon that won't stop stirring.
+ev.street_first,"El aire huele a hierro. La calle está demasiado quieta, como si llevara un rato esperándote.","The air smells of iron. The street is too still, as if it had been waiting for you."
+ev.home_whispers,Oyes pasos al otro lado de la pared.{p:500} Se detienen cuando tú te detienes.,You hear footsteps on the other side of the wall.{p:500} They stop when you stop.
+ev.shadow_appears,Tu sombra se alarga sobre el asfalto...{p:700} {c:#9a4ad0}y se pone de pie.{c},Your shadow stretches over the asphalt...{p:700} {c:#9a4ad0}and stands up.{c}
+ev.world_cracks,"Por un momento, las paredes respiran. {d:90}Dentro. Fuera.{d} Luego vuelven a fingir.","For a moment, the walls breathe. {d:90}In. Out.{d} Then they go back to pretending."
+ev.clara_vanish,"Un grito corto, al fondo de la calle.{p:900} Luego, nada.","A short scream, down the street.{p:900} Then, nothing."
+conv.mother.greet,"Ah, ya estás en pie. Te he oído dar vueltas toda la noche.","Oh, you're up. I heard you tossing and turning all night."
+conv.mother.ask,"¿Has dormido algo, cariño?","Did you get any sleep, sweetheart?"
+opt.mother.truth,No. Casi nada.,No. Barely.
+opt.mother.lie,"Sí, perfectamente.","Yes, perfectly."
+opt.mother.silence,*Mirar al suelo sin contestar*,*Stare at the floor without answering*
+opt.mother.tell,Mamá... he visto algo. Algo que me sigue.,Mom... I saw something. Something that follows me.
+opt.mother.nothing,"No, nada. Todo bien.","No, nothing. All good."
+conv.mother.truth,"Lo sé. Yo tampoco duermo desde que... bueno. Desde entonces. Si quieres hablar, aquí estoy. No me voy a ninguna parte.","I know. I haven't slept either since... well. Since then. If you want to talk, I'm here. I'm not going anywhere."
+conv.mother.lie,{d:70}Claro.{p:500} Perfectamente.{d},{d:70}Of course.{p:500} Perfectly.{d}
+conv.mother.lie2,"(Su sonrisa se queda quieta demasiado tiempo. Cuando parpadeas, vuelve a ser ella.)","(Her smile stays still for far too long. When you blink, she is herself again.)"
+conv.mother.silence,"Vale. No pasa nada. Hay café, si quieres.","Okay. That's fine. There's coffee, if you want some."
+conv.mother.tell,"(Se lo cuentas. No lo entiende del todo, pero te coge la mano y no la suelta.) Gracias por decírmelo. De verdad.","(You tell her. She doesn't fully understand, but she takes your hand and doesn't let go.) Thank you for telling me. Really."
+conv.mother.idle,¿Vas a salir? Abrígate. Hoy hace un frío raro.,Going out? Wrap up warm. It's strangely cold today.
+conv.mother.brave,Tienes otra cara. ¿Ha pasado algo ahí fuera?,You look different. Did something happen out there?
+conv.mother.distorted,¿Quién eres?{p:600} Aquí vivía alguien.{p:600} {c:DarkRed}{d:80}Alguien a quien yo quería.{d}{c},Who are you?{p:600} Someone used to live here.{p:600} {c:DarkRed}{d:80}Someone I loved.{d}{c}
+conv.clara.greet,¡Eh! Hace días que no te veo salir. ¿Todo bien?,Hey! I haven't seen you leave the house in days. Everything okay?
+opt.clara.fine,"Estoy bien, gracias.","I'm fine, thanks."
+opt.clara.help,¿Tienes un momento? Necesito hablar con alguien.,Do you have a minute? I need to talk to someone.
+opt.clara.ignore,*Ignorarla y seguir andando*,*Ignore her and keep walking*
+conv.clara.fine,Bueno... si tú lo dices. Ya sabes dónde vivo.,Well... if you say so. You know where I live.
+conv.clara.help,"Claro. Siempre. Ven, siéntate en el escalón.","Of course. Always. Come, sit on the step."
+conv.clara.help2,"(Hablas. Ella escucha. No arregla nada, pero algo pesa un poco menos.)","(You talk. She listens. It fixes nothing, but something weighs a little less.)"
+conv.clara.ignore,"(Notas su mirada clavada en la nuca durante mucho, mucho rato.)","(You feel her stare on the back of your neck for a long, long time.)"
+conv.clara.distorted,¿Por qué me miras así?{p:500} ¿Qué ves cuando me miras?,Why are you looking at me like that?{p:500} What do you see when you look at me?
+opt.clara.nothing,Nada. No veo nada.,Nothing. I see nothing.
+opt.clara.run,*Salir corriendo*,*Run away*
+conv.clara.after,"Gracias por contármelo. En serio. Llámame esta noche, ¿vale?","Thanks for telling me. Seriously. Call me tonight, okay?"
+conv.shadow.know,Te conozco.{p:500} Llevo contigo desde aquel día.,I know you.{p:500} I've been with you since that day.
+conv.shadow.accuse,Pudiste evitarlo. {c:#9a4ad0}Lo sabes.{c} Todos lo saben.,You could have stopped it. {c:#9a4ad0}You know it.{c} Everyone knows it.
+opt.shadow.face,*Enfrentarla*,*Face it*
+opt.shadow.flee,*Huir*,*Run*
+opt.shadow.ask,¿Qué quieres de mí?,What do you want from me?
+opt.shadow.accept,Tienes razón. Fue culpa mía.,You're right. It was my fault.
+opt.shadow.deny,No. No fue culpa mía.,No. It wasn't my fault.
+opt.shadow.leave,*Alejarte despacio*,*Back away slowly*
+conv.shadow.listen,Que me escuches. {d:70}Que me des la razón.{d},For you to listen. {d:70}For you to agree with me.{d}
+conv.shadow.face,(Das un paso hacia ella. Se agrieta como cristal viejo.),(You take a step towards it. It cracks like old glass.)
+conv.shadow.face2,No desaparezco.{p:600} Solo me hago pequeña.,I don't disappear.{p:600} I just get smaller.
+conv.shadow.flee,(Corres. Sus pasos suenan exactamente como los tuyos.),(You run. Its footsteps sound exactly like yours.)
+conv.shadow.accept,(Sonríe con una boca que antes no tenía.),(It smiles with a mouth it didn't have before.)
+conv.shadow.again,¿Has vuelto para darme la razón?,Have you come back to agree with me?
+ending.a.1,"Te sientas en el banco. Por primera vez en semanas, respiras hasta el fondo.","You sit on the bench. For the first time in weeks, you breathe all the way in."
+ending.a.2,"La Sombra sigue ahí, en algún sitio. Pero ahora sabes su nombre.",The Shadow is still out there somewhere. But now you know its name.
+ending.a.title,FIN — Amanecer,END — Dawn
+ending.b.1,Te sientas en el banco. El parque se dobla sobre sí mismo como una hoja de papel.,You sit on the bench. The park folds over itself like a sheet of paper.
+ending.b.2,Nadie viene a buscarte.{p:700} Nadie sabe que debería.,Nobody comes looking for you.{p:700} Nobody knows they should.
+ending.b.title,FIN — La otra orilla,END — The other shore
+ending.demo,Gracias por jugar a esta demo de Relato.,Thank you for playing this Relato demo.

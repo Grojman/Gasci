@@ -1,0 +1,25 @@
+{
+  // Reachable from the title and the pause menu. Modal: drawn over the scene below, dimmed.
+  "presentation": "modal",
+  "inputs": { "ui.back": [ { "type": "back" } ] },
+  "root": {
+    "type": "stack", "border": true, "padding": [4, 1], "spacing": 1, "background": "background", "minWidth": "60%",
+    "children": [
+      { "type": "text", "text": "settings.title", "style": "highlight" },
+      {
+        "type": "menu", "id": "settings_menu", "focus": true, "spacing": 1,
+        "children": [
+          { "type": "slider", "label": "settings.music", "var": "settings.music_volume" },
+          { "type": "slider", "label": "settings.sfx", "var": "settings.sfx_volume", "onChange": [ { "type": "sfx", "id": "confirm" } ] },
+          { "type": "combobox", "label": "settings.language", "var": "settings.language", "labelPrefix": "lang." },
+          { "type": "combobox", "label": "settings.display", "var": "settings.display_mode", "labelPrefix": "display." },
+          { "type": "switch", "label": "settings.autosave", "var": "settings.autosave" },
+          { "type": "numberfield", "label": "settings.autosave_minutes", "var": "settings.autosave_minutes", "enabledIf": "settings.autosave" },
+          { "type": "button", "label": "settings.controls", "actions": [ { "type": "open", "scene": "controls" } ] },
+          { "type": "button", "label": "settings.back", "actions": [ { "type": "back" } ] }
+        ]
+      },
+      { "type": "text", "text": "settings.hint", "style": "hint" }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  // Cards of the "black" event action: an image and/or a line of text on black.
+  "params": { "key": "string", "image": "string", "ms": "int", "big": "bool", "drawMode": "string", "cursorMode": "string" },
+  "root": {
+    "type": "card", "id": "card", "focus": true, "width": "fill", "height": "fill", "background": "background",
+    "image": { "fit": "scale-down", "color": "card", "drawMode": "Inside", "width": "fill", "height": "72%", "y": "top", "offset": [0, 2] },
+    "text": { "border": false, "centerLines": true, "charDelayMs": 55, "width": "fill", "y": "bottom", "offset": [0, -3] },
+    "soloText": { "border": false, "centerLines": true, "charDelayMs": 55, "width": "fill", "y": "center" }
+  }
+}

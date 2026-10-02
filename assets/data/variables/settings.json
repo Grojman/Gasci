@@ -1,0 +1,10 @@
+{
+  // Scope "settings": stored in settings.json in the user folder, kept across games. Referenced as settings.<name>.
+  // "bind" connects a variable to the engine (see README, "Bindings").
+  "music_volume":     { "type": "int",    "default": 6, "min": 0, "max": 10, "bind": "audio.music" },
+  "sfx_volume":       { "type": "int",    "default": 7, "min": 0, "max": 10, "bind": "audio.sfx" },
+  "language":         { "type": "string", "default": "es", "optionsFrom": "languages", "bind": "loc.language" },
+  "display_mode":     { "type": "string", "default": "windowed", "options": ["windowed", "fullscreen", "borderless"], "bind": "display.mode" },
+  "autosave":         { "type": "bool",   "default": false, "bind": "save.autosave" },
+  "autosave_minutes": { "type": "int",    "default": 5, "min": 1, "max": 60, "bind": "save.autosaveMinutes" }
+}

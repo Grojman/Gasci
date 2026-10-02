@@ -1,0 +1,4 @@
+{
+  // Scope "session": never stored. Referenced as session.<name>.
+  "pause_status": { "type": "string", "default": "", "options": ["", "pause.saved", "pause.cannot_save"] }
+}

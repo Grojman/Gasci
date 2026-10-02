@@ -1,0 +1,81 @@
+[
+  // Map triggers: enterMap (map) | halfway (map, section?) | step (map, x, y, w?, h?)
+  // Action types: see README (set | add | message | dialog | black | teleport | sfx | music | open | focus | save | endGame ...)
+  // Trigger types: immediate | enterMap | halfway | step | input (block?, action?) | change (block?)
+  {
+    "id": "intro",
+    "trigger": { "type": "immediate" },
+    "actions": [
+      { "type": "black", "key": "ev.intro.1", "seconds": 2.5, "big": true },
+      { "type": "black", "key": "ev.intro.2", "image": "general/eye", "drawMode": "Inside" },
+      { "type": "message", "target": "map_message", "keys": ["ev.intro.3"] }
+    ]
+  },
+  {
+    "id": "street_first_time",
+    "trigger": { "type": "enterMap", "map": "street" },
+    "actions": [ { "type": "message", "target": "map_message", "keys": ["ev.street_first"] } ]
+  },
+  {
+    // Persistent event: happens every time the player comes home while distorted.
+    "id": "home_whispers",
+    "if": "game.distortion >= 1",
+    "once": false,
+    "trigger": { "type": "enterMap", "map": "home" },
+    "actions": [ { "type": "sfx", "id": "door" }, { "type": "message", "target": "map_message", "keys": ["ev.home_whispers"] } ]
+  },
+  {
+    // Crossing the middle of the second section of the street.
+    "id": "shadow_appears",
+    "if": "!game.met_shadow",
+    "trigger": { "type": "halfway", "map": "street", "section": 1 },
+    "actions": [
+      { "type": "sfx", "id": "creature" },
+      { "type": "message", "target": "map_message", "keys": ["ev.shadow_appears"] },
+      { "type": "dialog", "id": "shadow_encounter" }
+    ]
+  },
+  {
+    "id": "world_cracks",
+    "if": "game.distortion >= 2",
+    "trigger": { "type": "immediate" },
+    "actions": [ { "type": "sfx", "id": "creature" }, { "type": "message", "target": "map_message", "keys": ["ev.world_cracks"] } ]
+  },
+  {
+    // An event that "kills" a character: Clara's icon and interaction change for the rest of the game.
+    "id": "clara_vanishes",
+    "if": "game.distortion >= 3 && game.met_shadow && !game.clara_helped",
+    "trigger": { "type": "immediate" },
+    "actions": [
+      { "type": "sfx", "id": "creature" },
+      { "type": "message", "target": "map_message", "keys": ["ev.clara_vanish"] },
+      { "type": "set", "var": "game.clara_gone", "value": true }
+    ]
+  },
+  {
+    "id": "ending_dawn",
+    "if": "game.courage >= 2",
+    "trigger": { "type": "step", "map": "park", "x": 28, "y": 2, "w": 5, "h": 1 },
+    "actions": [
+      { "type": "music", "id": "" },
+      { "type": "black", "key": "ending.a.1" },
+      { "type": "black", "key": "ending.a.2" },
+      { "type": "black", "key": "ending.a.title", "big": true, "seconds": 3 },
+      { "type": "black", "key": "ending.demo" },
+      { "type": "endGame" }
+    ]
+  },
+  {
+    "id": "ending_other_shore",
+    "if": "game.courage < 2",
+    "trigger": { "type": "step", "map": "park", "x": 28, "y": 2, "w": 5, "h": 1 },
+    "actions": [
+      { "type": "music", "id": "shadow" },
+      { "type": "black", "key": "ending.b.1", "image": "general/eye", "drawMode": "Random" },
+      { "type": "black", "key": "ending.b.2" },
+      { "type": "black", "key": "ending.b.title", "big": true, "seconds": 3 },
+      { "type": "black", "key": "ending.demo" },
+      { "type": "endGame" }
+    ]
+  }
+]

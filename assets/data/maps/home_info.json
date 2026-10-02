@@ -1,0 +1,36 @@
+{
+  // Characters not listed in "tiles" are walkable and drawn as they are.
+  "titleKey": "map.home",
+  // Interaction texts of this map are shown in this textbox block (scenes/game.json).
+  "textbox": "map_message",
+  "music": "home",
+  "spawn": [8, 5],
+  "tiles": [
+    { "char": " ", "solid": true },
+    { "char": "#", "glyph": "█", "fg": "#3b3642", "solid": true },
+    { "char": ".", "glyph": "·", "fg": "#2e2e2e" },
+    { "char": ",", "glyph": "░", "fg": "#4a2626" },
+    { "char": "+", "glyph": "▒", "fg": "#7a5230" },
+    { "char": "b", "glyph": "▓", "fg": "#5d4a66", "solid": true, "interact": "obj.bed" },
+    { "char": "m", "glyph": "▌", "fg": "#8fb3c9", "solid": true, "interact": "obj.mirror" },
+    { "char": "w", "glyph": "▒", "fg": "#6f7d8f", "solid": true, "interact": "obj.window" },
+    { "char": "p", "glyph": "■", "fg": "#8a6d45", "solid": true, "interact": "obj.photo" },
+    { "char": "f", "glyph": "█", "fg": "#9a9aa4", "solid": true, "interact": "obj.fridge" },
+    { "char": "k", "glyph": "▀", "fg": "#6b6b6b", "solid": true, "interact": "obj.counter" },
+    { "char": "t", "glyph": "▄", "fg": "#6b4a2a", "solid": true, "interact": "obj.table" },
+    // Animated tile: the wall clock hand turns.
+    { "char": "o", "anim": ["|", "/", "─", "\\"], "animSpeed": 0.5, "fg": "#c9c9c9", "solid": true, "interact": "obj.clock" }
+  ],
+  "exits": [
+    { "x": 27, "y": 13, "map": "street", "toX": 10, "toY": 7 }
+  ],
+  "npcs": [
+    {
+      "id": "mother", "x": 49, "y": 8, "glyph": "M", "fg": "Wheat", "dialog": "mother_morning",
+      "variants": [
+        { "if": "game.distortion >= 3", "fg": "DarkRed", "anim": ["M", "W"], "animSpeed": 0.7, "dialog": "mother_distorted" },
+        { "if": "game.talked_mother", "dialog": "mother_after" }
+      ]
+    }
+  ]
+}

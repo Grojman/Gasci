@@ -1,0 +1,8 @@
+{
+  // Quit effect: the screen fills with black bits over the scene below, then the game closes.
+  "presentation": { "backdrop": "none" },
+  "root": {
+    "type": "effect", "effect": "dissolve", "width": "fill", "height": "fill",
+    "onDone": [ { "type": "exit" } ]
+  }
+}

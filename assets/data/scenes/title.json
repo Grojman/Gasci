@@ -1,0 +1,21 @@
+{
+  // Title screen: the title art is drawn first (confirm/back skip it), then the menu.
+  "music": "title",
+  "root": {
+    "type": "overlay", "width": "fill", "height": "fill",
+    "children": [
+      { "type": "image", "image": "general/title", "fit": "none", "detail": 1, "drawMode": "Random", "speed": 250,
+        "color": "title", "width": "fill", "y": "top", "offset": [0, 3] },
+      {
+        "type": "menu", "id": "title_menu", "focus": true, "spacing": 1, "x": "center", "y": "center", "offset": [0, 5],
+        "children": [
+          { "type": "button", "label": "title.continue", "enabledIf": "system.save_exists", "actions": [ { "type": "continue" } ] },
+          { "type": "button", "label": "title.new", "actions": [ { "type": "newGame" } ] },
+          { "type": "button", "label": "title.settings", "actions": [ { "type": "open", "scene": "settings" } ] },
+          { "type": "button", "label": "title.exit", "actions": [ { "type": "quit" } ] }
+        ]
+      },
+      { "type": "text", "text": "title.hint", "style": "hint", "x": "center", "y": "bottom", "offset": [0, -1] }
+    ]
+  }
+}

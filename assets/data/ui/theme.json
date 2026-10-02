@@ -1,0 +1,16 @@
+{
+  // Named colours usable as "style", "background", "borderColor"... and the default UI sounds.
+  "colors": {
+    "text": "#c8c8c8",
+    "dim": "#6e6e6e",
+    "hint": "#505050",
+    "highlight": "#e63c3c",
+    "border": "#5a5a64",
+    "disabled": "#3c3c3c",
+    "ok": "#78b478",
+    "background": "#000000",
+    "title": "#aa141e",
+    "card": "#961419"
+  },
+  "sounds": { "move": "select", "confirm": "confirm", "locked": "locked", "change": "select" }
+}

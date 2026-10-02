@@ -1,0 +1,21 @@
+{
+  // Everything about the game that is not content. See README "game.json".
+  "title": "Relato",
+  // Minimum grid (cells) the game is designed for. Windowed mode uses exactly this size; fullscreen and
+  // borderless grow the grid to fill the screen at the biggest font scale that still reaches it.
+  "grid": { "minWidth": 100, "minHeight": 36, "fontScales": [2, 1] },
+  // null = SadConsole's built-in IBM 8x16 font. A custom font: { "file": "x.font", "charmap": "x.charmap.txt" } in assets/fonts.
+  "font": null,
+  // A map section is the part of a map shown at once; it does not depend on the screen.
+  "map": { "sectionWidth": 98, "sectionHeight": 34 },
+  // Smallest image character in pixels at font scale 1 (its shape is the shape of every image character).
+  "images": { "minCharSize": [1.5, 3], "detail": 2 },
+  "defaultLanguage": "es",
+  "startScene": "title",
+  "newGame": { "scene": "game", "params": { "map": "home" } },
+  "conversationScene": "dialog",
+  "cardScene": "black",
+  "quitScene": "exit",
+  "persistence": { "delaySeconds": 1.0 },
+  "input": { "maxKeys": 2 }
+}

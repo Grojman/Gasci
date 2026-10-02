@@ -1,0 +1,17 @@
+{
+  // The game: the player's map, the distortion glitch over it, and the box where the map texts appear.
+  // The map has no box of its own: maps name "map_message" in their _info.json, and events target it.
+  "params": { "map": "string" },
+  "saved": true,
+  "inputs": { "pause": [ { "type": "open", "scene": "pause" } ] },
+  "root": {
+    "type": "overlay", "width": "fill", "height": "fill",
+    "children": [
+      { "type": "map", "id": "world", "map": "$map", "player": true, "focus": true, "raiseEvents": true,
+        "hint": "map.hint", "width": "fill", "height": "fill" },
+      { "type": "effect", "id": "world_glitch", "effect": "glitch", "intensity": "game.distortion",
+        "width": "fill", "height": "fill" },
+      { "type": "textbox", "id": "map_message", "width": "84%", "height": 7, "x": "center", "y": "bottom", "offset": [0, -2] }
+    ]
+  }
+}

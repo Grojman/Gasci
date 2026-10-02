@@ -1,0 +1,33 @@
+{
+  // Opened with the "pause" action on the map. Full screen (not modal).
+  "inputs": { "ui.back": [ { "type": "back" } ] },
+  "onEnter": [ { "type": "set", "var": "session.pause_status", "value": "" } ],
+  "root": {
+    "type": "overlay", "width": "fill", "height": "fill",
+    "children": [
+      {
+        "type": "stack", "x": "center", "y": "center", "border": true, "padding": [4, 1], "spacing": 1, "minWidth": "40%",
+        "background": "background",
+        "children": [
+          { "type": "text", "text": "pause.title", "style": "highlight" },
+          {
+            "type": "menu", "id": "pause_menu", "focus": true, "spacing": 1,
+            "children": [
+              { "type": "button", "label": "pause.resume", "actions": [ { "type": "back" } ] },
+              { "type": "button", "label": "pause.save", "enabledIf": "system.can_save", "actions": [
+                  { "type": "save",
+                    "onSuccess": [ { "type": "set", "var": "session.pause_status", "value": "pause.saved" } ],
+                    "onFail": [ { "type": "set", "var": "session.pause_status", "value": "pause.cannot_save" } ] } ] },
+              { "type": "button", "label": "pause.settings", "actions": [ { "type": "open", "scene": "settings" } ] },
+              { "type": "button", "label": "pause.title_screen", "actions": [ { "type": "save" }, { "type": "returnToTitle" } ] },
+              { "type": "button", "label": "pause.quit", "actions": [ { "type": "quit" } ] }
+            ]
+          },
+          { "type": "text", "textVar": "session.pause_status", "style": "ok" },
+          { "type": "timer", "when": "session.pause_status != ''", "seconds": 2.5,
+            "actions": [ { "type": "set", "var": "session.pause_status", "value": "" } ] }
+        ]
+      }
+    ]
+  }
+}

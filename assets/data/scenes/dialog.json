@@ -1,0 +1,16 @@
+{
+  // Conversations: the portrait fills the screen, the text and the answers are drawn over its bottom rows.
+  "params": { "conversation": "string" },
+  "root": {
+    "type": "overlay", "width": "fill", "height": "fill", "border": true, "background": "background",
+    "children": [
+      {
+        "type": "conversation", "id": "conversation", "conversation": "$conversation", "focus": true,
+        "width": "fill", "height": "fill",
+        "portrait": { "width": "fill", "height": "fill", "fit": "contain" },
+        "text": { "width": "fill", "height": 5, "y": "bottom", "offset": [0, -3], "background": "background" },
+        "options": { "width": "fill", "height": 4, "y": "bottom", "offset": [0, 1], "background": "background" }
+      }
+    ]
+  }
+}

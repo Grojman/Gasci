@@ -1,0 +1,13 @@
+{
+  // Scope "game": stored in the save, reset to "default" on New game. Referenced as game.<name>.
+  "courage":         { "type": "int",  "default": 0, "min": 0, "max": 10 },
+  "distortion":      { "type": "int",  "default": 0, "min": 0, "max": 10 },
+  "trust_mother":    { "type": "int",  "default": 0, "min": 0, "max": 10 },
+  "talked_mother":   { "type": "bool", "default": false },
+  "told_mother":     { "type": "bool", "default": false },
+  "talked_clara":    { "type": "bool", "default": false },
+  "clara_helped":    { "type": "bool", "default": false },
+  "clara_gone":      { "type": "bool", "default": false },
+  "met_shadow":      { "type": "bool", "default": false },
+  "shadow_defeated": { "type": "bool", "default": false }
+}

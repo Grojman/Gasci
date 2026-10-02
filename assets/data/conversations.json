@@ -1,0 +1,125 @@
+{
+  // ---------------------------------------------------------------- MOTHER
+  "mother_morning": {
+    "character": "mother", "name": "char.mother", "color": "Wheat", "drawMode": "ZigZag", "cursorMode": "Single",
+    "nodes": {
+      "start": { "text": "conv.mother.greet", "image": 1, "next": "ask" },
+      "ask": {
+        "text": "conv.mother.ask",
+        "options": [
+          { "text": "opt.mother.truth", "next": "truth", "add": { "game.trust_mother": 1 } },
+          { "text": "opt.mother.lie", "next": "lie", "add": { "game.distortion": 1 } },
+          { "text": "opt.mother.silence", "next": "silence" },
+          // Visible but locked until the character has found some courage.
+          { "text": "opt.mother.tell", "lockedIf": "game.courage < 1", "next": "tell" }
+        ]
+      },
+      "truth": { "text": "conv.mother.truth", "set": { "game.talked_mother": true } },
+      // Only the cells that differ between 1.txt and 2.txt are redrawn.
+      "lie": { "text": "conv.mother.lie", "image": 2, "drawMode": "ZigZag", "set": { "game.talked_mother": true }, "next": "lie2" },
+      "lie2": { "text": "conv.mother.lie2", "image": 1, "drawMode": "Random" },
+      "silence": { "text": "conv.mother.silence", "set": { "game.talked_mother": true } },
+      "tell": { "text": "conv.mother.tell", "set": { "game.talked_mother": true, "game.told_mother": true }, "add": { "game.courage": 1, "game.trust_mother": 1 } }
+    }
+  },
+  "mother_after": {
+    "character": "mother", "name": "char.mother", "color": "Wheat", "drawMode": "TopToBottom", "cursorMode": "Single",
+    "nodes": {
+      "start": {
+        "image": 1,
+        "branch": [ { "if": "game.courage >= 1 && !game.told_mother", "next": "brave" } ],
+        "next": "idle"
+      },
+      "idle": { "text": "conv.mother.idle" },
+      "brave": {
+        "text": "conv.mother.brave",
+        "options": [
+          { "text": "opt.mother.tell", "next": "tell", "set": { "game.told_mother": true }, "add": { "game.courage": 1, "game.trust_mother": 1 } },
+          { "text": "opt.mother.nothing", "next": "idle" }
+        ]
+      },
+      "tell": { "text": "conv.mother.tell" }
+    }
+  },
+  "mother_distorted": {
+    "character": "mother", "name": "char.mother_distorted", "color": "DarkRed", "drawMode": "Random", "cursorMode": "Single", "music": "shadow",
+    "nodes": {
+      "start": { "text": "conv.mother.distorted", "image": 2, "sfx": "creature" }
+    }
+  },
+
+  // ---------------------------------------------------------------- CLARA (neighbour)
+  "clara_talk": {
+    "character": "clara", "name": "char.clara", "color": "#c9a0dc", "drawMode": "Inside",
+    "nodes": {
+      "start": { "image": 1, "branch": [ { "if": "game.distortion >= 2", "next": "distorted" } ], "next": "greet" },
+      "greet": {
+        "text": "conv.clara.greet",
+        "options": [
+          { "text": "opt.clara.fine", "next": "fine" },
+          { "text": "opt.clara.help", "lockedIf": "game.courage < 1", "next": "help" },
+          { "text": "opt.clara.ignore", "next": "ignore", "add": { "game.distortion": 1 } }
+        ]
+      },
+      "fine": { "text": "conv.clara.fine", "set": { "game.talked_clara": true } },
+      "help": { "text": "conv.clara.help", "next": "help2" },
+      "help2": { "text": "conv.clara.help2", "set": { "game.clara_helped": true, "game.talked_clara": true }, "add": { "game.courage": 1 } },
+      "ignore": { "text": "conv.clara.ignore", "image": 2, "drawMode": "Random", "set": { "game.talked_clara": true } },
+      "distorted": {
+        "text": "conv.clara.distorted", "image": 2, "drawMode": "Random",
+        "options": [
+          { "text": "opt.clara.nothing", "add": { "game.distortion": 1 } },
+          { "text": "opt.clara.run" }
+        ]
+      }
+    }
+  },
+  "clara_after": {
+    "character": "clara", "name": "char.clara", "color": "#a0dca0", "drawMode": "TopToBottom",
+    "nodes": { "start": { "text": "conv.clara.after", "image": 1 } }
+  },
+
+  // ---------------------------------------------------------------- THE SHADOW (trauma creature)
+  "shadow_encounter": {
+    "character": "shadow", "name": "char.shadow", "color": "#9a4ad0", "drawMode": "Inside", "music": "shadow",
+    "nodes": {
+      "start": { "text": "conv.shadow.know", "image": 1, "set": { "game.met_shadow": true }, "next": "accuse" },
+      "accuse": {
+        "text": "conv.shadow.accuse",
+        // The portrait changes while the player is still deciding...
+        "imageAfter": { "seconds": 4, "image": 2, "drawMode": "Random" },
+        "options": [
+          { "text": "opt.shadow.face", "next": "face", "add": { "game.courage": 1 }, "set": { "game.shadow_defeated": true } },
+          // ...and running away stops being possible if the player hesitates.
+          { "text": "opt.shadow.flee", "lockAfter": 7, "next": "flee", "add": { "game.distortion": 1 } },
+          { "text": "opt.shadow.ask", "next": "listen" }
+        ]
+      },
+      "listen": {
+        "text": "conv.shadow.listen", "image": 2, "drawMode": "Borders",
+        "options": [
+          { "text": "opt.shadow.accept", "next": "accept", "add": { "game.distortion": 2 } },
+          { "text": "opt.shadow.deny", "next": "face", "add": { "game.courage": 1 }, "set": { "game.shadow_defeated": true } }
+        ]
+      },
+      "face": { "text": "conv.shadow.face", "image": 3, "drawMode": "Borders", "sfx": "creature", "next": "face2" },
+      "face2": { "text": "conv.shadow.face2" },
+      "flee": { "text": "conv.shadow.flee" },
+      "accept": { "text": "conv.shadow.accept", "sfx": "creature" }
+    }
+  },
+  "shadow_again": {
+    "character": "shadow", "name": "char.shadow", "color": "#9a4ad0", "drawMode": "Random", "music": "shadow",
+    "nodes": {
+      "start": {
+        "text": "conv.shadow.again", "image": 2,
+        "options": [
+          { "text": "opt.shadow.face", "next": "face", "add": { "game.courage": 1 }, "set": { "game.shadow_defeated": true } },
+          { "text": "opt.shadow.leave" }
+        ]
+      },
+      "face": { "text": "conv.shadow.face", "image": 3, "drawMode": "Borders", "sfx": "creature", "next": "face2" },
+      "face2": { "text": "conv.shadow.face2" }
+    }
+  }
+}
